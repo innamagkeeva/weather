@@ -1,0 +1,176 @@
+.like path {
+  fill: red;
+  stroke: red;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+li {
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-color: grey;
+}
+
+.weather {
+  width: 621px;
+  height: 655px;
+  background-color: white;
+  margin: 0 auto;
+  margin-top: 10px;
+  position: relative;
+}
+
+.weather__inner {
+  width: 600px;
+  height: 629px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  height: 45px;
+  position: relative;
+}
+
+.form__input {
+  width: 100%;
+  border: none;
+  /* border-bottom: 1px solid black; */
+}
+
+.form__button {
+  background-color: white;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.details {
+  display: flex;
+  justify-content: space-between;
+}
+
+.details__section {
+  width: 50%;
+  height: 582px;
+  border-top: 1px solid black;
+}
+
+.section__border {
+  border-right: 1px solid black;
+}
+
+.nuances-list__city {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10px;
+  padding-top: 23px;
+  height: 72px;
+}
+
+.nuances-list__button {
+  border: none;
+  background-color: white;
+}
+
+.nuances-list__temp {
+  height: 83px;
+  font-size: 65px;
+  padding-left: 16px;
+}
+
+.nuances-lis__nuances-average {
+  height: 114px;
+  padding: 10px;
+}
+
+.nuances-lis__nuance {
+  font-size: 20px;
+  padding-top: 5px;
+}
+
+.nuances-lis__item {
+  width: 265px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.nuances-lis__item-border {
+  border-bottom: 1px solid black;
+}
+
+.nuances-lis__hour {
+  padding-top: 10px;
+}
+
+.nuances-lis__forecast-nuances {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.city__details-added {
+  height: 72px;
+  border-bottom: 1px solid black;
+}
+
+.city__text {
+  padding-left: 18px;
+  padding-top: 23px;
+}
+
+.city-list__item {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  align-items: center;
+  margin-left: 17px;
+  margin-right: 10px;
+}
+
+.city-list__button-text {
+  border: none;
+  background-color: white;
+  font-size: 30px;
+}
+
+.city-list__button-delete {
+  font-size: 30px;
+  rotate: 45deg;
+  background-color: white;
+  border: none;
+}
+
+.city-list {
+  overflow-y: auto;
+  height: 479px;
+  margin-top: 30px;
+}

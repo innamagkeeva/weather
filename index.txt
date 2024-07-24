@@ -1,0 +1,19 @@
+1) title
+2) БЭМ
+3) cursor: pointer
+4) svg - serdce (урок)
+5) пересмотреть 
+if (dataCity.includes(data.name)) {
+        svgLike.classList.add('like')
+      } else {
+        svgLike.classList.remove('like')
+      }
+
+6) пересмотреть deleteCity
+7) методы массивов https://learn.javascript.ru/array-methods#dobavlenie-udalenie-elementov
+8) https://learn.javascript.ru/dom-navigation
+
+9) Когда нашел город, то очищать input
+10) Вывести температуру (поле temp)
+11) когда добавляю город, сердце должно загореться
+12) Когда я кликаю по сердцу, если он уже есть в избранном, то удалять элемент из избранного и сердце гаснет
