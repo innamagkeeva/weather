@@ -28,32 +28,43 @@ createCityNames()
 function getCityName(e) {
   e.preventDefault()
 
-  const url1 = `${serverUrl}?q=${formInput.value}&units=metric&appid=${apiKey}`
+  const url = `${serverUrl}?q=${formInput.value}&units=metric&appid=${apiKey}`
 
-  fetch(url1)
+  fetch(url)
     .then((response) => {
       return response.json()
     })
     .then((data) => {
       cityName.textContent = data.name
-      feelsLike.textContent = Math.round(data.main.feels_like)
-      sunrise.textContent = data.sys.sunrise
-      sunset.textContent = data.sys.sunset
+
       tempDegrees.textContent = Math.round(data.main.temp)
 
-      if (iconNames[data.main]) {
-        img.src = `./img/weather/${iconNames[data.main]}.svg`
-      }
+      feelsLike.textContent = Math.round(data.main.feels_like)
 
       console.log(data)
 
       addCityName.addEventListener('click', addLike)
 
       if (dataCity.includes(data.name)) {
-        svgLike.classList.add('like')
+        addLike()
       } else {
         svgLike.classList.remove('like')
       }
+
+      const sunriseTimestamp = data.sys.sunrise
+      const sunriseDate = new Date(sunriseTimestamp * 1000)
+      const sunriseHours = sunriseDate.getHours().toString().padStart(2, '0')
+      const sunriseMinutes = sunriseDate
+        .getMinutes()
+        .toString()
+        .padStart(2, '0')
+      sunrise.textContent = `${sunriseHours}:${sunriseMinutes}`
+
+      const sunsetTimestamp = data.sys.sunset
+      const sunsetDate = new Date(sunsetTimestamp * 1000)
+      const sunsetHours = sunsetDate.getHours().toString().padStart(2, '0')
+      const sunsetMinutes = sunsetDate.getMinutes().toString().padStart(2, '0')
+      sunset.textContent = `${sunsetHours}:${sunsetMinutes}`
     })
 }
 
@@ -118,18 +129,17 @@ function createCityNames() {
 function getCityText(e) {
   e.preventDefault()
 
-  const nameCity = text
-  newButtonText.textContent = nameCity
+  const nameCity = e.target.textContent
+  console.log(e.target)
+  const url = `${serverUrl}?q=${nameCity}&units=metric&appid=${apiKey}`
 
-  const url2 = `${serverUrl}?q=${nameCity.value}&units=metric&appid=${apiKey}`
-
-  fetch(url2)
+  fetch(url)
     .then((response) => {
       return response.json()
     })
     .then((data) => {
       cityName.textContent = data.name
       feelsLike.textContent = Math.round(data.main.feels_like)
-      console.log(data)
+      // console.log(data)
     })
 }
